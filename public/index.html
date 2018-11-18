@@ -13,11 +13,16 @@
     };
     firebase.initializeApp(config);
   </script>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script defer src="oauth.js"></script>
   <body>
     <h1>Annonymously Login to Search, Upload, and Access Files</h1>
     <div id="oauth">
       <button id="login" onclick="firebase.auth().signInAnonymously().catch(function(error) {});">Login Annonymously</button>
     </div>
+    <p>
+      Is this site ugly? Yes. Does it work? Yes!
+    </p>
   </body>
 </html>

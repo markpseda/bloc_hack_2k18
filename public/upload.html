@@ -14,6 +14,8 @@
     firebase.initializeApp(config);
     var storage = firebase.storage();
   </script>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script defer src="upload.js"></script>
   <script defer src="./signout.js"></script>
   <body>
@@ -23,17 +25,17 @@
       <button id="logout">Logout</button>
     </div>
     <div id="form">
-      <input id="uniqueID" value="" placeholder="Unique name using only 'a-z','A-Z', and '_', 36 character limit" size="36"></input>
-      <input id="topic" value="" placeholder="topic, 36 character limit"></input>
-      <input id="file" value="" type="file"></input>
-      <input id="tags" value="" placeholder="custom tags, seperated by ';', 36 character limit" size="36"></input>
+      <input id="uniqueID" value="" placeholder="Unique name using only 'a-z','A-Z', and '_', 36 character limit" size="36"><br>
+      <input id="topic" value="" placeholder="topic, 36 character limit"><br>
+      <input id="file" value="" type="file"><br>
+      <input id="tags" value="" placeholder="custom tags, seperated by ';', 36 character limit" size="36"><br>
     </div>
     <div id="suggestions">
       
     </div>
     <div id="setPassword">
       <p>Create a password for your document. ANYONE with this password will be able to access the document, ONLY SHARE with people you trust. We cannot recover your password for you, so WRITE IT DOWN SOMEWHERE SAFE!</p>
-      <input value="" placeholder="be good" id="pass"></input>
+      <input type="password" value="" placeholder="be good" id="pass"><br>
     </div>
     <div id="upload">
       <button id="submit">Upload</button>

@@ -18,11 +18,11 @@ firebase.database().ref(`uNK`).once('value').then(function(snap){
             document.getElementById(`download-${file}`).addEventListener('click', function(){
                 document.getElementById("getDownloadFile").innerHTML = `
                     <p>Please Input the password for that file</p>
-                    <input id="docPass" value=""></input>
+                    <input type="password" id="docPass-${file}" value=""></input>
                     <button id="getDoc-${file}">Submit</button>
                 `;
                 document.getElementById(`getDoc-${file}`).addEventListener('click', function(){
-                    let hashedPass = SHA512(document.getElementById("docPass").value);
+                    let hashedPass = SHA512(document.getElementById(`docPass-${file}`).value);
                     firebase.database().ref(`a-user/${sessionStorage.getItem('priv-storage-user')}/onDownload`).set({
                         'uniqueID':file,
                         'hashedPass':hashedPass
