@@ -1,0 +1,42 @@
+<html>
+  <title>Anonymous Cloud Storage</title>
+  <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyBkAb6ca8R12irBPY-BElHXiiBqNDyurqg",
+      authDomain: "priv-storage.firebaseapp.com",
+      databaseURL: "https://priv-storage.firebaseio.com",
+      projectId: "priv-storage",
+      storageBucket: "priv-storage.appspot.com",
+      messagingSenderId: "315696012929"
+    };
+    firebase.initializeApp(config);
+    var storage = firebase.storage();
+  </script>
+  <script defer src="upload.js"></script>
+  <script defer src="./signout.js"></script>
+  <body>
+    <h1>Annonymously Search, Upload, and Access Files</h1>
+    <div id="nav">
+      <button id="search" onclick="window.location.assign('./search.html')">Back to Search</button>
+      <button id="logout">Logout</button>
+    </div>
+    <div id="form">
+      <input id="uniqueID" value="" placeholder="Unique name using only 'a-z','A-Z', and '_', 36 character limit" size="36"></input>
+      <input id="topic" value="" placeholder="topic, 36 character limit"></input>
+      <input id="file" value="" type="file"></input>
+      <input id="tags" value="" placeholder="custom tags, seperated by ';', 36 character limit" size="36"></input>
+    </div>
+    <div id="suggestions">
+      
+    </div>
+    <div id="setPassword">
+      <p>Create a password for your document. ANYONE with this password will be able to access the document, ONLY SHARE with people you trust. We cannot recover your password for you, so WRITE IT DOWN SOMEWHERE SAFE!</p>
+      <input value="" placeholder="be good" id="pass"></input>
+    </div>
+    <div id="upload">
+      <button id="submit">Upload</button>
+    </div>
+  </body>
+</html>

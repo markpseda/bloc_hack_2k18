@@ -1,0 +1,59 @@
+<html>
+  <title>Anonymous Cloud Storage</title>
+  <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyBkAb6ca8R12irBPY-BElHXiiBqNDyurqg",
+      authDomain: "priv-storage.firebaseapp.com",
+      databaseURL: "https://priv-storage.firebaseio.com",
+      projectId: "priv-storage",
+      storageBucket: "priv-storage.appspot.com",
+      messagingSenderId: "315696012929"
+    };
+    firebase.initializeApp(config);
+  </script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+  <script defer src="./search.js"></script>
+  <script defer src="./signout.js"></script>
+  <body>
+    <h1>Search, Upload, and Access Files Annonymously</h1>
+    <div id="nav">
+      <button id="upload" onclick="window.location.assign('./upload.html')">Upload Document</button>
+      <button id="logout">Logout</button>
+    </div>
+    <input placeholder="search terms here" />
+    <div id="files">
+      <div id="table" class="container">
+        <table id="datatable" class="display" width="100%" cellspacing="0">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Topic</th>
+                <th>Tags</th>
+                <th>Timestamp</th>
+                <!-- <th>Edit</th> -->
+                <th>Download</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <th>Title</th>
+                <th>Topic</th>
+                <th>Tags</th>
+                <th>Timestamp</th>
+                <!-- <th>Edit</th> -->
+                <th>Download</th>
+            </tr>
+        </tfoot>
+        <tbody id="firebaseTarget">
+        </tbody>
+        </table>
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
+    </div>
+    <div id="getDownloadFile">
+    </div>
+  </body>
+</html>
