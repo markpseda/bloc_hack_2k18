@@ -1,6 +1,22 @@
 {
-  "rules": {
-    ".read": "true",
-    ".write": "auth != null"
+  "rules":{
+    "uNK": {
+      ".read": "true",
+      ".write": "false"
+    },
+    "passwords": {
+      ".read": "false",
+      ".write": "false"
+    },
+    "documents": {
+      ".read": "false",
+      ".write": "false"
+    },
+    "a-user": {
+      "$userID": {
+        ".read": "auth.uid === $userID",
+        ".write": "auth.uid === $userID"
+      }
+    }
   }
 }
